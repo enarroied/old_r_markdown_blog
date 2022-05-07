@@ -6,14 +6,14 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-07T13:29:02+02:00"
+      "last_modified": "2022-05-07T13:33:14+02:00"
     },
     {
       "path": "index.html",
       "title": "Eric Narro's blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-07T13:29:02+02:00"
+      "last_modified": "2022-05-07T13:33:15+02:00"
     }
   ],
   "collections": ["posts/posts.json"]
