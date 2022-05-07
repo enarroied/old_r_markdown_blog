@@ -15,6 +15,7 @@
     "preview": {},
     "last_modified": "2022-05-07T13:28:12+02:00",
     "input_file": {}
+<<<<<<< HEAD
   },
   {
     "path": "posts/cyclistic/",
@@ -32,5 +33,7 @@
     "preview": {},
     "last_modified": "2022-05-07T16:09:06+02:00",
     "input_file": {}
+=======
+>>>>>>> 1881a05ab95b7ab10cbf1faca71af907c2bd963f
   }
 ]

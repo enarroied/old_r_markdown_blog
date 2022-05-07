@@ -6,14 +6,22 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
+<<<<<<< HEAD
       "last_modified": "2022-05-07T16:13:08+02:00"
+=======
+      "last_modified": "2022-05-07T13:33:14+02:00"
+>>>>>>> 1881a05ab95b7ab10cbf1faca71af907c2bd963f
     },
     {
       "path": "index.html",
       "title": "Eric Narro's blog",
       "author": [],
       "contents": "\n\n\n\n",
+<<<<<<< HEAD
       "last_modified": "2022-05-07T16:13:09+02:00"
+=======
+      "last_modified": "2022-05-07T13:33:15+02:00"
+>>>>>>> 1881a05ab95b7ab10cbf1faca71af907c2bd963f
     }
   ],
   "collections": ["posts/posts.json"]
