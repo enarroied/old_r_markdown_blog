@@ -1,10 +1,10 @@
 ---
 title: "Welcome to my blog"
 description: |
-  Welcome to my new blog about data analysis and about all my projects.
+  Welcome to my blog about data analysis and all my other projects! Let me tell you why I created it and how I made it!
 author:
   - name: Eric Narro
-    url: https://ericnarroied.github.io
+    url: https://enarroied.github.io
     #affiliation: Spacely Sprockets
     #affiliation_url: https://example.com/spacelysprokets
 date: 04-29-2022
@@ -17,7 +17,10 @@ output:
     code_folding: true
 categories:
   - R
-  - maps
+  - R studio
+  - rmarkdown
+  - distill
+preview: "welcome_files/figure_html5/rstudio.png"
 ---
 
 ```{r setup, include=FALSE}
@@ -31,13 +34,52 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Why did I make this blog?
 
-I had been thinking about creating a blog to make a portfolio for quite some time. As i was 
+I had been thinking about creating a blog to make a portfolio for quite some time. As you can find out [in my About page](../../about.html), I have been programming and doing projects since 2018, but the amount of time spent on projects increased over time as well as my will to become a developper and then a data analyst
+
+When I started to create scripts that were really used for my work, and even a python plugin for QGis, I began publishing my work on github. 
+
+I finally created my portfolio while completing the [Google Data Analytics' Professional Certificate on Coursera](https://coursera.org/share/451c19d4d66ef966778e8812398fd699). 
+
+What I wanted was:
+
+* A static portfolio site, where I could have :
+    + A simple and clean landing page.
+    + Easy to find contact information and connexion to my different social media profiles.
+    + An about page, with more information about me, for those who want to know more about how I ended taking this path.
+    + A resume section, in `HTML` (plus eventually a pdf version to download too).
+    + A blog section to wrtite about my projects, data analysis, etc.
+    + A project section with links to some of my projects posted on github or other platforms.
+* To use Rstudio to have its own project folder, with git configured to make the workflow easier (I rather spend more time at first, take the risk of learning something, and then have a smooth process).
+* To publish and host on Github pages, basically to not have it all spread across too many places.
+* I use Ubuntu as desktop OS, so it has to be fine with that too.
+
 
 # How did I create this blog?
 
 This blog was created using the following stack:
 
 * **Rmarkdown**: R markdown is very similar to markdown. Having previous experience with $\LaTeX{}$, this is an easy way to edit documents. Markdown is very used to document code so I thought it could be a good option.
-* **R studio**: it is an IDE widely used to write R code. Since I created this blog to post my firts project done with R, I thought it would be a good idea to access all the content from "the same window". It also helps me get more familiar with working with the tool and with git (with github).
-* **distill package**: An R package to make simple blogs. 
+* **R studio**: it is an IDE widely used to write R code. Since I created this blog to post my first project done with R, I thought it would be a good idea to access all the content from "the same window". It also helps me get more familiar with working with the tool and with git (with github).
+* **distill and rmarkdown packages**: An R package to make simple blogs. I considered making it with the `blogdown` package using Hugo, but the documentation about it was not clear to me (and I wanted to host and publish my blog on Github and not on Netlify). 
+* **R and other R libraries**: Since this is a blog about data analysis, I have used R and several libraries to clean, prepare, analyze and create visualizations. Since I am mostly familiar with python and jupyter notebooks, I wll probably integrate python projects too. And any other tool needed for the process.
+
+![My RStudio environment while I work on my blog! (with a mistake in my website URL!)](welcome_files/figure_html5/rstudio.png)
+
+Since all this environment is pretty new to me (I am again, more familiar with python and working with Visual Studio Code or Jupyter Notebooks) I had to lean it all from scratch. I looked for a lot of documentation on the internet, I tried blogdown but I did not feel confortable with it, I looked at distill and I found [this post from Danielle Brantley](https://datascidani.com/posts/2020-12-14-same-content-new-look/) that led me to choose the distill package.
+
+So I built my blog adding the content and modifying the yaml file, usual stuff. The main modifications were the following:
+
+* **Landing page / index.html**: I wanted a simple and intuitive landing page, a simple picture of me, some basic information and an easy way to find the content. The distill default page does not come with this. After a lot of research, I found the `postcards` package documented on the [distillery blog](https://distillery.rbind.io/posts/2021-03-16-postcards-distill/). It allows to make exactly what I wanted with just little modification of the `yaml` file.
+* **CSS**: I have some basic CSS knowledge, but to be honnest, styling is not my cup of tea, so I got 2 different files that I put together and modified a little. The code looks like a monster (with a few `!important` properties ), but the result is (I think) not so bad. 
+    + So I first used the `postcards.css` from the postcard layout that I modified a little. I mostly changed the color scheme and added background color to code chunks and to tables, to make them stand out and adding some `overflow: auto` so tables and code blocks do not take too much space on the page. You can find the original file in [Alisson Premanes Hill's github](https://github.com/apreshill/mfeo/blob/master/postcards.css)
+    + I then saw [Michael Clark's blog](https://m-clark.github.io/), and I copy-pasted some of [his CSS file](https://github.com/m-clark/m-clark.github.io/blob/master/styles.css) modifyng the color scheme to match mine.
+
+
+# Other learning ressources
+
+The ressourcec mentionned above have been major inspirations, often with copy-paste to build my website. I also used the following ressources:
+
+[Rstudio documentation about distill package](https://rstudio.github.io/distill/)
+
+[An intro to distill by rstudio4edu](https://rstudio4edu.github.io/rstudio4edu-book/intro-distill.html)
 

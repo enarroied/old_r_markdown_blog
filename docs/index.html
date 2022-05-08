@@ -720,6 +720,11 @@
           @import url('https://fonts.googleapis.com/css2?family=Bitter');
           @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
 
+          @import url("pygment_highlights.css");
+          @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+          @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Condensed|Open+Sans|Open+Sans+Condensed:300|Open+Sans+Condensed:light|Lato|Lora|Fira+Sans|Fira+Mono");
+
+
           html {
             /*-- Main font sizes --*/
             --title-size:      50px;
@@ -789,11 +794,12 @@
             color: #483D8B;
           }
 
-          /* Change link appearance */
+          /* Change link appearance 
           d-article a {
             border-bottom: 2px solid #ffd8db;
             text-decoration: none;
           }
+          */
 
           div.st-container,
           d-article table.pandoc-table
@@ -811,9 +817,193 @@
             background-color: #FFF8DC;
           }
 
+          /* Added from https://github.com/m-clark/m-clark.github.io/blob/master/styles.css
+          with very few modifications */
+          d-title h1 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+            font-weight: 200 !important;
+            font-size: 50px !important;
+            color: #483D8B !important;
+            margin-top: 4rem !important;
+            margin-bottom: 1.5rem !important;
+            line-height: 1 !important;
+          }
+
+          .index-title h1 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+            font-weight: 200 !important;
+            font-size: 75px !important;
+            font-variant: small-caps !important;
+            text-align: center !important;
+            color: #483D8B !important;
+            margin-top: 4rem !important;
+            margin-bottom: 1.5rem !important;
+            line-height: 1 !important;
+            border-bottom: 0 !important; /*same as default h2*/
+            padding-bottom: 1rem !important; 
+          }
+
+          d-article h1 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+            font-style: normal !important;
+            font-variant: small-caps !important;
+            font-weight: 400 !important;
+            font-size: 175% !important;
+            color: #483D8B !important;
+            margin-top: 2.1rem !important;
+            margin-bottom: 1.2rem !important;
+            line-height: 1 !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; /*same as default h2*/
+            padding-bottom: 1rem !important;
+          }
+
+          d-article h2 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 150%;
+            color: #483D8B !important;
+            margin-top: 2.1rem;
+            margin-bottom: 1.2rem;
+            line-height: 1;
+            /* to remove will require something to keep the inline from inserting */
+            border-bottom: 0px solid rgba(0, 0, 0, 0.1); 
+            padding-bottom: 1rem; 
+            
+          }
+
+          d-article h3 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+            font-style: normal !important;
+            font-weight: 400 !important;
+            font-size: 125% !important;
+            color: #483D8B !important;
+            opacity: .9 !important;
+            margin-top: 2rem !important;
+            margin-bottom: 1.2rem !important;
+            line-height: 1 !important;
+          }
+
+          d-article  h4 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+            font-style: normal !important;
+            text-transform: none !important;  /*default is uppercase*/
+            font-weight: 400 !important;
+            font-size: 110% !important;
+            color: #483D8B !important;
+            opacity: .9 !important;
+            margin-top: 1.9rem !important;
+            margin-bottom: 1.2rem !important;
+            line-height: 1 !important;
+          }
+
+          d-article  h5 {
+            font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+            font-style: normal !important;
+            text-transform: none !important;  /*default is uppercase*/
+            font-weight: 400 !important;
+            font-size: 100% !important;
+            color: #483D8B !important;
+            opacity: .9 !important;
+            margin-top: 1.9rem !important;
+            margin-bottom: 1.2rem !important;
+            line-height: 1 !important;
+          }
+
+          /* latex */
+          .math {
+            color: #404040 !important;   
+            font-weight: normal !important;
+            font-size: 90% !important;
+          }
+
+          /*remove old line*/
+          li a:hover,
+          d-article a:hover {
+            text-decoration: none ;
+            border-bottom: none !important;
+            background-size: 100% 100% ;
+            cursor: pointer ;
+          }
+
+          p a, aside a, li a, d-appendix a, a.footnote-backlink {
+              color: #15b7d6 ;
+              display: inline-block ;
+              text-decoration: none ;
+              transition: background-size .4s ease ;
+              border-bottom: 0px solid ;
+          }
+
+          p a {
+            /* text-decoration: underline */
+            color: #15b7d6 ;
+          }
+
+          p a:after, aside a:after, li a:after, d-appendix a:after {
+              content: '' ;
+              display: block ;
+              width: 0 ;
+              height: 1.25px ;
+              background: #483D8B ;
+              transition: width .3s ;
+          }
+
+          p a:hover::after, aside a:hover::after, li a:hover::after, d-appendix a:hover::after {
+            width: 100% ;
+            //transition: width .3s ;
+           }
+           
+          /* for twitter etc icon links */
+          .social-icon {
+            color: #15b7d6;
+            background-image: none;  /* remove hover line*/
+            background-size: 0 100%;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            transition: background-size .4s ease;
+            border-bottom: 0px solid;
+          } 
+          d-footnote-list a.footnote-backlink {
+              color:  #15b7d6 !important; /* otherwise some inline injection will occur*/
+              padding-left: 0.5em;
+          }
+
+          .categories li > a:hover {
+            border-bottom: none !important;
+          }
+
+          /* remove underline for TOC */
+          .d-contents nav a:hover {
+              text-decoration: none;
+          }
+           strong {
+            color: #483D8B;  
+          }
+
+          /* add spacing for figs and tables, so text and other figs/tables don't 
+          start right up at their border */
+          .l-body {
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
 
 
-          </style>
+          /* Nav bar */
+          .distill-site-nav {
+            color: #404040;
+            background-color: #d9edf7;
+            font-size: 20px;
+            font-weight: 300;
+          }
+
+          .distill-site-nav a {
+            color: inherit;
+            text-decoration: none;
+          }
+
+          .distill-site-nav a:hover {
+            color: #0085a1;
+          }</style>
           <style type="text/css">
           /* base style */
 
@@ -1007,10 +1197,10 @@
               developed code-based solutions and fell in love with
               python and programming. I live in France but I am able to
               move anywhere around the 🌎. I love working with data,
-              sorting it, turning it around, make 📈, making it speak. I
-              also enjoy cooking, hiking, travelling and gardening.
-              Check up my portfolio and my pathway, and contact me for
-              more information!</p>
+              sorting it, turning it around, creating 📈, making it
+              speak. I also enjoy cooking, hiking, travelling and
+              gardening. Check up my portfolio and my work, and contact
+              me for more information!</p>
             </div>
             <div class="col-11 mt-3 text-center d-block d-sm-none">
               <p>I am a data analyst currently looking for new
@@ -1018,10 +1208,10 @@
               developed code-based solutions and fell in love with
               python and programming. I live in France but I am able to
               move anywhere around the 🌎. I love working with data,
-              sorting it, turning it around, make 📈, making it speak. I
-              also enjoy cooking, hiking, travelling and gardening.
-              Check up my portfolio and my pathway, and contact me for
-              more information!</p>
+              sorting it, turning it around, creating 📈, making it
+              speak. I also enjoy cooking, hiking, travelling and
+              gardening. Check up my portfolio and my work, and contact
+              me for more information!</p>
             </div>
           </div>
 

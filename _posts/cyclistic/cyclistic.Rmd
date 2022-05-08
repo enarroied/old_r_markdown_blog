@@ -4,7 +4,7 @@ description: |
   Looking for time-based, geographic and product-specific differences between members and casual users using public bikes in Chicago
 author:
   - name: Eric Narro
-    url: https://ericnarroied.github.io
+    url: https://enarroied.github.io
     #affiliation: Spacely Sprockets
     #affiliation_url: https://example.com/spacelysprokets
 date: 04-30-2022
@@ -960,9 +960,9 @@ q_park <- getbb("Chicago") %>%
 osm_park <- osmdata_sf(q_park)
 st_crs(osm_park$osm_polygons) <- 4326
 sf_park <- osm_park$osm_polygon
-station_map_1 <-get_stamenmap( bbox=c(left = -87.7, 
+station_map_1 <-get_stamenmap( bbox=c(left = -87.85, 
                                       bottom = 41.85,
-                                      right = -87.6,
+                                      right = -87.4,
                                       top = 42.0),
                                zoom = 11,
                                crop = FALSE)
@@ -1013,7 +1013,7 @@ ggmap(ggmap = station_map_1)+
     legend.key = element_rect(fill = "lightgrey", color = NA),
     panel.border = element_rect(color = "darkgrey",
                                 fill = NA,
-                                size = 1)
+                                size = 1),
   )+
   scale_color_manual(name="User type",
                     values=c(Casual="red", Members="blue"))+
@@ -1023,7 +1023,7 @@ ggmap(ggmap = station_map_1)+
   labs(title = "Location of most popular docking stations",
        subtitle = "Stations where rides both start and end", 
        caption = "Cyclistic's dataset (April 2021-Mars 2022) + OSM data. \t author: E. Narro")+
-  geom_rect(xmin = -87.64, xmax = -87.6,   ymin = 41.838, ymax = 41.93, alpha = 0, color = "red") 
+  geom_rect(xmin = -87.64, xmax = -87.6,   ymin = 41.838, ymax = 41.93, alpha = 0, color = "red")
 ```
 
 ```{r distance zero map 2, message=FALSE, warning=FALSE, cache=TRUE}

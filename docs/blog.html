@@ -2126,6 +2126,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   @import url('https://fonts.googleapis.com/css2?family=Bitter');
   @import url('https://fonts.googleapis.com/css2?family=DM+Mono');
 
+  @import url("pygment_highlights.css");
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+  @import url("https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Condensed|Open+Sans|Open+Sans+Condensed:300|Open+Sans+Condensed:light|Lato|Lora|Fira+Sans|Fira+Mono");
+
+
   html {
     /*-- Main font sizes --*/
     --title-size:      50px;
@@ -2195,11 +2200,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: #483D8B;
   }
 
-  /* Change link appearance */
+  /* Change link appearance 
   d-article a {
     border-bottom: 2px solid #ffd8db;
     text-decoration: none;
   }
+  */
 
   div.st-container,
   d-article table.pandoc-table
@@ -2217,9 +2223,193 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     background-color: #FFF8DC;
   }
 
+  /* Added from https://github.com/m-clark/m-clark.github.io/blob/master/styles.css
+  with very few modifications */
+  d-title h1 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+    font-weight: 200 !important;
+    font-size: 50px !important;
+    color: #483D8B !important;
+    margin-top: 4rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1 !important;
+  }
+
+  .index-title h1 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+    font-weight: 200 !important;
+    font-size: 75px !important;
+    font-variant: small-caps !important;
+    text-align: center !important;
+    color: #483D8B !important;
+    margin-top: 4rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1 !important;
+    border-bottom: 0 !important; /*same as default h2*/
+    padding-bottom: 1rem !important; 
+  }
+
+  d-article h1 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+    font-style: normal !important;
+    font-variant: small-caps !important;
+    font-weight: 400 !important;
+    font-size: 175% !important;
+    color: #483D8B !important;
+    margin-top: 2.1rem !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; /*same as default h2*/
+    padding-bottom: 1rem !important;
+  }
+
+  d-article h2 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 150%;
+    color: #483D8B !important;
+    margin-top: 2.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1;
+    /* to remove will require something to keep the inline from inserting */
+    border-bottom: 0px solid rgba(0, 0, 0, 0.1); 
+    padding-bottom: 1rem; 
+    
+  }
+
+  d-article h3 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 125% !important;
+    color: #483D8B !important;
+    opacity: .9 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1 !important;
+  }
+
+  d-article  h4 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+    font-style: normal !important;
+    text-transform: none !important;  /*default is uppercase*/
+    font-weight: 400 !important;
+    font-size: 110% !important;
+    color: #483D8B !important;
+    opacity: .9 !important;
+    margin-top: 1.9rem !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1 !important;
+  }
+
+  d-article  h5 {
+    font-family: 'Open Sans Condensed', Roboto, Helvetica, Arial, sans !important;
+    font-style: normal !important;
+    text-transform: none !important;  /*default is uppercase*/
+    font-weight: 400 !important;
+    font-size: 100% !important;
+    color: #483D8B !important;
+    opacity: .9 !important;
+    margin-top: 1.9rem !important;
+    margin-bottom: 1.2rem !important;
+    line-height: 1 !important;
+  }
+
+  /* latex */
+  .math {
+    color: #404040 !important;   
+    font-weight: normal !important;
+    font-size: 90% !important;
+  }
+
+  /*remove old line*/
+  li a:hover,
+  d-article a:hover {
+    text-decoration: none ;
+    border-bottom: none !important;
+    background-size: 100% 100% ;
+    cursor: pointer ;
+  }
+
+  p a, aside a, li a, d-appendix a, a.footnote-backlink {
+      color: #15b7d6 ;
+      display: inline-block ;
+      text-decoration: none ;
+      transition: background-size .4s ease ;
+      border-bottom: 0px solid ;
+  }
+
+  p a {
+    /* text-decoration: underline */
+    color: #15b7d6 ;
+  }
+
+  p a:after, aside a:after, li a:after, d-appendix a:after {
+      content: '' ;
+      display: block ;
+      width: 0 ;
+      height: 1.25px ;
+      background: #483D8B ;
+      transition: width .3s ;
+  }
+
+  p a:hover::after, aside a:hover::after, li a:hover::after, d-appendix a:hover::after {
+    width: 100% ;
+    //transition: width .3s ;
+   }
+   
+  /* for twitter etc icon links */
+  .social-icon {
+    color: #15b7d6;
+    background-image: none;  /* remove hover line*/
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    transition: background-size .4s ease;
+    border-bottom: 0px solid;
+  } 
+  d-footnote-list a.footnote-backlink {
+      color:  #15b7d6 !important; /* otherwise some inline injection will occur*/
+      padding-left: 0.5em;
+  }
+
+  .categories li > a:hover {
+    border-bottom: none !important;
+  }
+
+  /* remove underline for TOC */
+  .d-contents nav a:hover {
+      text-decoration: none;
+  }
+   strong {
+    color: #483D8B;  
+  }
+
+  /* add spacing for figs and tables, so text and other figs/tables don't 
+  start right up at their border */
+  .l-body {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 
 
-  </style>
+  /* Nav bar */
+  .distill-site-nav {
+    color: #404040;
+    background-color: #d9edf7;
+    font-size: 20px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: #0085a1;
+  }</style>
   <style type="text/css">
   /* base style */
 
@@ -2574,23 +2764,25 @@ function init_posts_list() {
 </div>
 </a>
 <a href="posts/welcome/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":["R","maps"]}</script>
+<script class="post-metadata" type="text/json">{"categories":["R","R studio","rmarkdown","distill"]}</script>
 <div class="metadata">
-<div class="publishedDate">April 29, 2022</div>
+<div class="publishedDate">April 28, 2022</div>
 <div class="dt-authors">
 <div class="dt-author">Eric Narro</div>
 </div>
 </div>
 <div class="thumbnail">
-<img/>
+<img src="posts/welcome/welcome_files/figure_html5/rstudio.png"/>
 </div>
 <div class="description">
 <h2>Welcome to my blog</h2>
 <div class="dt-tags">
 <div class="dt-tag">R</div>
-<div class="dt-tag">maps</div>
+<div class="dt-tag">R studio</div>
+<div class="dt-tag">rmarkdown</div>
+<div class="dt-tag">distill</div>
 </div>
-<p>Welcome to my new blog about data analysis and about all my projects.</p>
+<p>Welcome to my blog about data analysis and all my other projects! Let me tell you why I created it and how I made it!</p>
 </div>
 </a>
 </div>
@@ -2603,12 +2795,24 @@ function init_posts_list() {
 <span class="category-count">(2)</span>
 </li>
 <li>
+<a href="#category:distill">distill</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
 <a href="#category:maps">maps</a>
-<span class="category-count">(2)</span>
+<span class="category-count">(1)</span>
 </li>
 <li>
 <a href="#category:R">R</a>
 <span class="category-count">(2)</span>
+</li>
+<li>
+<a href="#category:R_studio">R studio</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#category:rmarkdown">rmarkdown</a>
+<span class="category-count">(1)</span>
 </li>
 </ul>
 </div>
