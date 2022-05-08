@@ -18,6 +18,7 @@ output:
 categories:
   - R
   - maps
+preview: "/cyclistic_files/figure-html5/histograms per day-1.png"
 ---
 
 ```{r setup, include=FALSE}
