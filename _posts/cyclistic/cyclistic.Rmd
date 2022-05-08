@@ -1,7 +1,7 @@
 ---
 title: "Cyclistic - Comparing members vs casual users"
 description: |
-  Looking for tie-based, geographic and product-specific differences between members and casual users using public bikes in Chicago
+  Looking for time-based, geographic and product-specific differences between members and casual users using public bikes in Chicago
 author:
   - name: Eric Narro
     url: https://ericnarroied.github.io
@@ -12,31 +12,20 @@ output:
   distill::distill_article:
     self_contained: false
     toc: true
-    theme: cerulean
-    toc_depth: 5  
-    number_sections: true  
-    keep_md: true
-abstract: |
-  We compared members and casual users in order to find any differences in their use of Cyclistic's service using internal data. Rides done by members have more uniform patterns that those done by casual users. Most rides are done by members, they are also usually under 35 minutes, they happen during working weekdays more often. Casual users rides are usually longer, sometimes over 45 minutes and happen more during the weekends. During hotter months, both groups increase the amount of rides, but casual users do in a higher proportion. Almost 3/4 of the rides happen in the afternoon, and morning rides are by far mostly done by members. Member rides usually cover a higher area of downtown Chicago, Casual users ride more often in the very East of the Town. Members ride classic bikes 60% of the time, casual users ride electric bikes and classic bikes in an even amount. A considerable amount of members seem to be Unversity students. Casual users seem to use the service for leisure more often than members and there is probably a fair amonunt of tourists. In order to increase memberships, marketing campaings could probably take place in touristic areas of downtown Chicago, during weekends, in the afternoons, and during hot months. Partnering with ocal businesses to add attractivity to the membership could be considered.
-keywords: |
-  - members
-  - users
-  - use trends
-  - marketing
+    toc_float: false
+    toc_depth: 5
+    code_folding: true
+categories:
+  - R
+  - maps
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{r, echo=FALSE}
-htmltools::img(src = knitr::image_uri("/home/eric/projects/courses/google_data_analyst/capstone/case_1/data/final_project/cyclistic_logo.png"),
-alt = 'logo',
-style = 'position:absolute; top:0; right:0; padding:10px; width: 147px; height: 139px; margin-top:70px; float:right')
-```
-
-```{css}
-h1 {'margin-right:150px'}
+htmltools::tagList(
+  htmltools::tags$script(src = "/prism.js")
+)
 ```
 
 *This case study is the final project (capstone) of the Google Analytics Coursera course.*
@@ -340,6 +329,7 @@ The size of the file is somehow "medium" and we can use R (we can create smaller
 ### Main descriptive statistics
 
 First, we load the libraries we need. We also define a function to get the mode of our values.
+
 ```{r define mode, echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE, results='hide', tidy=TRUE, cache=TRUE}
 #R does not have in-built function for mode, but here we found it: https://www.tutorialspoint.com/r/r_mean_median_mode.htm#:~:text=The%20mode%20is%20the%20value,a%20data%20set%20in%20R.
 getmode <- function(v) {
@@ -366,9 +356,11 @@ df_trips <- rename(df_trips, user = member)
 ```
 
 Here is the table structure:
+
 ```{r metadata, message=FALSE, warning=FALSE, cache=TRUE}
 glimpse(df_trips)
 ```
+
 Then, we get the main descriptive statistics summary for the dataset.
 
 ```{r summary statistics 2, message=FALSE, warning=FALSE, cache=TRUE}
@@ -382,6 +374,7 @@ print(dfSummary(df_trips,
           max.distinct.values = 12),
       method = 'render')
 ```
+
 We also get the modes for some of the values:
 
 ```{r modes of the dataset, message=FALSE, warning=FALSE, cache=TRUE}
@@ -393,6 +386,7 @@ cat(paste(" mode of week days\t:", getmode(df_trips$week_day), "\n",
 "mode of duration\t:", getmode(df_trips$ride_length), "\n",
 "mode of distance\t:", getmode(df_trips$ride_distance), "\n"))
 ```
+
 ### Important Dataset elements
 
 This dataset has over 5.6 Million observations for the last 12 months (April 2021 - March 2022). Main elements from this dataset are now discussed under the perspective of an actual service. As a reminder, we are trying identify the main differences between members and casual users to increase the sales of memberships.

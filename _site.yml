@@ -1,7 +1,7 @@
 name: "eric-narro"
 title: "Eric Narro's blog"
 description: |
-  Eric Narro's blog
+  Eric Narro's blog on data anlysis and programming
 output_dir: "docs"
 navbar:
   right:
@@ -9,4 +9,9 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-output: distill::distill_article
+    - text: "Blog"
+      href: blog.html
+output: 
+  distill::distill_article
+theme: postcards.css
+highlight: monochrome

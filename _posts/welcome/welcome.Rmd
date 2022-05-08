@@ -1,17 +1,23 @@
 ---
-title: "Welcome to Eric Narro's blog"
+title: "Welcome to my blog"
 description: |
-  Welcome to our new blog, Eric Narro's blog. We hope you enjoy 
-  reading what we have to say!
+  Welcome to my new blog about data analysis and about all my projects.
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: 05-07-2022
+  - name: Eric Narro
+    url: https://ericnarroied.github.io
+    #affiliation: Spacely Sprockets
+    #affiliation_url: https://example.com/spacelysprokets
+date: 04-29-2022
 output:
   distill::distill_article:
     self_contained: false
+    toc: true
+    toc_float: false
+    toc_depth: 5
+    code_folding: true
+categories:
+  - R
+  - maps
 ---
 
 ```{r setup, include=FALSE}
@@ -23,4 +29,15 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+# Why did I make this blog?
+
+I had been thinking about creating a blog to make a portfolio for quite some time. As i was 
+
+# How did I create this blog?
+
+This blog was created using the following stack:
+
+* **Rmarkdown**: R markdown is very similar to markdown. Having previous experience with $\LaTeX{}$, this is an easy way to edit documents. Markdown is very used to document code so I thought it could be a good option.
+* **R studio**: it is an IDE widely used to write R code. Since I created this blog to post my firts project done with R, I thought it would be a good idea to access all the content from "the same window". It also helps me get more familiar with working with the tool and with git (with github).
+* **distill package**: An R package to make simple blogs. 
 

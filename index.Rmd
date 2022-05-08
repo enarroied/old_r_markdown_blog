@@ -1,5 +1,18 @@
 ---
-title: "Eric Narro's blog"
+title: "Eric Narro"
+image: "eric-narro-circle.png"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/ericnarro/"
+  - label: Twitter
+    url: "https://https://twitter.com/enarrodata"
+  - label: GitHub
+    url: "https://github.com/enarroied"
+  - label: Email me!
+    url: "mailto:eric.narro@gmail.com"
+output:
+  postcards::jolla
 site: distill::distill_website
-listing: posts
 ---
+
+I am a data analyst currently looking for new opportunities, after 8 years in the wine industry where I developed code-based solutions and fell in love with python and programming. I live in France but I am able to move anywhere around the 🌎. I love working with data, sorting it, turning it around, make 📈, making it speak. I also enjoy cooking, hiking, travelling and gardening. Check up my portfolio and my pathway, and contact me for more information!
