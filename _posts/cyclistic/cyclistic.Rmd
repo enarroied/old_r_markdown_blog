@@ -101,10 +101,10 @@ Original dataset is published under the following license :
 
 ## Metadata
 
-The datasets for the period** March 2021 – March 2022** are provided per month, as CSV files, and can be downloaded from the web page in compressed (zip) format.
+The datasets for the period **March 2021 – March 2022** are provided per month, as CSV files, and can be downloaded from the web page in compressed (zip) format.
 Original datasets are provided without metadata. 
 
-However, using intuition and after checking the metadata provided in the file “Divvy_Stations_Trips_2013”we were able to figure out the following :
+However, using intuition and after checking the metadata provided in the file “Divvy_Stations_Trips_2013” we were able to figure out the following :
 
 | Variables         | Description                                                        |
 |-------------------|--------------------------------------------------------------------|
@@ -129,10 +129,11 @@ However, using intuition and after checking the metadata provided in the file �
 * Data origin:
   + Data comes from Cyclistic’s internal source, 1st party information
 * Data is comprehensive:
-  + Some information is missing or has problems (some coordinates are are wrong and there is a few rides with abnormal lengths -even negative lengths-)
+  + Some information is missing or has problems (some coordinates are wrong and there is a few rides with abnormal lengths -even negative lengths-)
 * Data is current:
   + It includes past 12 month at time of analysis
   + Covid-19 may have altered riders’ behavior, so this has to be taken into account when interpreting results
+  
 *Data is vetted :
   + This data comes from our data engineers team and that it has been vetted
 
@@ -233,7 +234,7 @@ Since there are 12 files, we loop through all of them and apply the function cre
 * **Rename member column:** The column "member_casual" is renamed to "member", and the values "casual" are renamed "N" (*for NO*) and values "member" are renamed "Y" (*for YES*). This is to gain space.
 * **Erase rows with non-customer trips:** Some stations are repair or test stations (view section above), we remove them since they should not involve customers.
 * **Add ride length (in seconds):** We add a column, ride_length, to the dataset, with the duration (in seconds) of the trip. Note that a customer may not have been riding the bike during the full time he has been renting it. Also note that not all customers ride as fast.
-* **Remove rides with abnormal length:** Some data comes with trips that "ended before the started", or duration of 0 seconds. Some trips have duration of very few seconds. We have removed trips of less than 1 minute. We also remove trips that lasted over a day, since they ere probably stolen bikes or some other kind of technical problem.
+* **Remove rides with abnormal length:** Some data comes with trips that "ended before the started", or duration of 0 seconds. Some trips have duration of very few seconds. We have removed trips of less than 1 minute. We also remove trips that lasted over a day, since they are probably stolen bikes or some other kind of technical problem.
 * **Add ride distance (in meters):** We add the distance between the starting and the end point of the ride. Note that this is the shortest distance between points, it does not reflect at all the real distance the customer rides.
 * **Make day of the week column:** We create a column with the day of the week, for further analysis.
 * **Make month column:** We create a column with the month for further analysis.
@@ -416,7 +417,7 @@ Starting and end points are usually docking stations, but about 13% of the time 
 
 The average ride distance is 2.2 km and **the median ride distance is 1.6 km**, but let’s keep in mind that is the distance between start and end, not the distance really ride (and many rides have a distance of 0 because they ended where they started…).
 
-ocking stations are mostly located in Chicago but also in the Metropolitan area, from Lincolnwood in the North to Riverdale in the South, **stations are spread in a about 40 km range**. 	The map below shows all the stations from the dataset (in blue) and all the stations found via the Open Street Map (OSM) API (this has been done to check if the data from OSM seems reliable since we are going to use it for further analysis). We can see that there is a **high density of stations in Downtown Chicago and to the North**, but that density is lower in the South. Density is also lower in the West compared to the East, where new docking stations are being deployed (we can see about of dozen docking stations around the town of Norridge have not been added to OSM already).
+Docking stations are mostly located in Chicago but also in the Metropolitan area, from Lincolnwood in the North to Riverdale in the South, **stations are spread in a about 40 km range**. 	The map below shows all the stations from the dataset (in blue) and all the stations found via the Open Street Map (OSM) API (this has been done to check if the data from OSM seems reliable since we are going to use it for further analysis). We can see that there is a **high density of stations in Downtown Chicago and to the North**, but that density is lower in the South. Density is also lower in the West compared to the East, where new docking stations are being deployed (we can see about of dozen docking stations around the town of Norridge have not been added to OSM already).
 
 Here is the map:
 
@@ -604,7 +605,7 @@ df_trips %>%
   count()*100 / count(df_trips)
 ```
 
-Member rides from 5 AM to 9 AM on week days represent 8.82 % of the total rides, and 2.79% for the casual users. Also, people who commute have to go both ways. Some of this rides could also be for other purposes. Some people may also commute at different times (even earlier for some users, people who work at night…) or even on weekends. It would be good to have a more detailed use of the service. We can however estimate that  **between 15% and 20% of the rides are done to commute**, and the rest… *probably* leisure. It is also important to note that, always as an estimation, **members make up around 3/4 of the commute rides.**.
+Member rides from 5 AM to 9 AM on week days represent 8.82 % of the total rides, and 2.79% for the casual users. Also, people who commute have to go both ways. Some of this rides could also be for other purposes. Some people may also commute at different times (even earlier for some users, people who work at night…) or even on weekends. It would be good to have a more detailed use of the service. We can however estimate that  **between 15% and 20% of the rides are done to commute**, and the rest…,  *probably* leisure. It is also important to note that, always as an estimation, **members make up around 3/4 of the commute rides.**.
 
 Here is a plot of the distribution of rides per hour of the day:
 
@@ -1492,11 +1493,13 @@ The distribution does not seem very impacted by seasonality, but it looks like c
 
 The main differences of casual vs member users are:
 
-* Rides done by members are 10 times more important than those done by casual users * Members do most of the total rides on weekdays, casual users do most of the rides on weekends. 
+* Rides done by members are 10 times more important than those done by casual users 
+* Members do most of the total rides on weekdays, casual users do most of the rides on weekends. 
 * Members ride less on weekends than on weekdays 
 * Casual users do not ride that much from November to March 
 * Casual users make longer rides, sometimes longer than 45 minutes and it is extremely rare for members to exceed 45 minutes (or even 35 minutes) 
-* Most rides happen in Downtown Chicago, in the East part of the city, where the skyscrapers and all the big buildings are * Casual users ride almost exclusively in the very East area of Chicago, Members expand a little more to surrounding neighborhoods. 
+* Most rides happen in Downtown Chicago, in the East part of the city, where the skyscrapers and all the big buildings are 
+* Casual users ride almost exclusively in the very East area of Chicago, Members expand a little more to surrounding neighborhoods. 
 * Members use classic bikes more often (63% of the time), casual users are about 50-50
 
 During our analysis, **we also guessed** the following. It would be interesting to do further research and quantify some statements:
@@ -1511,7 +1514,7 @@ During our analysis, **we also guessed** the following. It would be interesting 
 
 ## Main suggestions
 
-* Either extend the maximum riding time with no extra charge for current memberships, OR create a new membership with longer time with no charge, with a bit higher price OR create a membership based on hours (eg: $240 for 50 hours to do within a year + same extra price than “regular” members for electric bikes – The amounts are to illustrate the point) 
+* Either extend the maximum riding time with no extra charge for current memberships, OR create a new membership with longer time with no charge, with a bit higher price OR create an extra membership plan based on hours (eg: $240 for 50 hours to do within a year + same extra price than “regular” members for electric bikes – The amounts are to illustrate the point) 
 * Create a special low-cost subscription for the use of the service in the mornings, maybe oriented to senior citizens 
 * In order to convert more casual users to members, make marketing campaigns where those casual users are: around the Magnificent Mile and the parks of the Loop district, during weekends of hot months. 
 * Create a special offer to make casual users install and use the application 

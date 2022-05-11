@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Eric Narro's blog</title>
+    <link>https://enarroied.github.io</link>
+    <atom:link href="https://enarroied.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+    <description>Eric Narro's blog on data anlysis and programming
+</description>
+    <generator>Distill</generator>
+    <lastBuildDate>Sat, 30 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Cyclistic - Comparing members vs casual users</title>
+      <dc:creator>Eric Narro</dc:creator>
+      <link>https://enarroied.github.io/posts/cyclistic</link>
+      <description>Looking for time-based, geographic and product-specific differences between members and casual users using public bikes in Chicago</description>
+      <category>R</category>
+      <category>maps</category>
+      <guid>https://enarroied.github.io/posts/cyclistic</guid>
+      <pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://enarroied.github.io/posts/cyclistic//cyclistic_files/figure-html5/histograms per day-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
+    <item>
+      <title>Welcome to my blog</title>
+      <dc:creator>Eric Narro</dc:creator>
+      <link>https://enarroied.github.io/posts/welcome</link>
+      <description>Welcome to my blog about data analysis and all my other projects! Let me tell you why I created it and how I made it!</description>
+      <category>R</category>
+      <category>R studio</category>
+      <category>rmarkdown</category>
+      <category>distill</category>
+      <guid>https://enarroied.github.io/posts/welcome</guid>
+      <pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://enarroied.github.io/posts/welcome/welcome_files/figure_html5/rstudio.png" medium="image" type="image/png" width="1356" height="707"/>
+    </item>
+  </channel>
+</rss>

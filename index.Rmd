@@ -15,4 +15,4 @@ output:
 site: distill::distill_website
 ---
 
-I am a data analyst currently looking for new opportunities, after 8 years in the wine industry where I developed code-based solutions and fell in love with python and programming. I live in France but I am able to move anywhere around the 🌎. I love working with data, sorting it, turning it around, creating 📈, making it speak. I also enjoy cooking, hiking, travelling and gardening. Check up my portfolio and my work, and contact me for more information!
+I am a data analyst currently looking for new opportunities, after 8 years in the wine industry I developed code-based solutions and fell in love with python and programming. I live in France but I am able to move anywhere around the 🌎. I love working with data, sorting it, turning it around, creating 📈, and making it speak. I also enjoy cooking, hiking, travelling and gardening. Please, check up my portfolio and my work, and feel free to contact me for more information! Thanks for taking the time to read about me.

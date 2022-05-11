@@ -9,9 +9,23 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "CV"
+      href: ../resume-eric-narro.pdf
     - text: "Blog"
       href: blog.html
+    - icon: fa fa-github
+      href: https://www.github.com/enarroied
+    - icon: fa fa-twitter-square
+      href: https://www.twitter.com/enarrodata
+    - icon: fa fa-linkedin-square
+      href: https://www.linkedin.com/in/ericnarro/?locale=en_US
 output: 
   distill::distill_article
 theme: postcards.css
 highlight: monochrome
+
+base_url: https://enarroied.github.io
+collections:
+  posts:
+    disqus: eric-narro
+    share: [twitter, linkedin]
