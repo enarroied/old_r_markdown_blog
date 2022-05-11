@@ -7,19 +7,19 @@
     <description>Eric Narro's blog on data anlysis and programming
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 11 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>CVI Geometry</title>
       <dc:creator>Eric Narro</dc:creator>
       <link>https://enarroied.github.io/projects/cvi_geometry</link>
-      <description>A python script to extract land registry information from a specific type of pdf file using publicly available
+      <description>A python script to extract land registry information from a specific type of pdf file using publicly available.  
 
-[See on github](https://github.com/enarroied/cvi_geometry)</description>
+Source code : https://github.com/enarroied/cvi_geometry</description>
       <category>Python</category>
       <category>QGIS</category>
       <category>maps</category>
       <guid>https://enarroied.github.io/projects/cvi_geometry</guid>
-      <pubDate>Wed, 11 May 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 10 May 2022 00:00:00 +0000</pubDate>
       <media:content url="https://enarroied.github.io/projects/cvi_geometry/cvi_geometry.png" medium="image" type="image/png" width="1016" height="472"/>
     </item>
   </channel>

@@ -1,9 +1,9 @@
 ---
 title: "CVI Geometry"
 description: |
-  A python script to extract land registry information from a specific type of pdf file using publicly available
+  A python script to extract land registry information from a specific type of pdf file using publicly available.  
   
-  [See on github](https://github.com/enarroied/cvi_geometry)
+  Source code : https://github.com/enarroied/cvi_geometry
 author:
   - name: Eric Narro
     url: https://enarroied.github.io
