@@ -1,0 +1,25 @@
+[
+  {
+    "path": "projects/cvi_geometry/",
+    "title": "CVI Geometry",
+    "description": "A python script to extract land registry information from a specific type of pdf file using publicly available\n\n[See on github](https://github.com/enarroied/cvi_geometry)",
+    "author": [
+      {
+        "name": "Eric Narro",
+        "url": "https://enarroied.github.io"
+      }
+    ],
+    "date": "2022-05-11",
+    "categories": [
+      "Python",
+      "QGIS",
+      "maps"
+    ],
+    "contents": "\n\nContents\nProject\ncontext\nHow it works\nGet the\nscript\n\nProject context\nThis script was created in 2021 (I created it prior to uploading it\nto github) when I was working as a vineyard technician for an organic\nassociation and had to monitor several vineyards to look for the\nFlavescence Dorée leafhoper (Scaphoideus titanus), an insect\nthat vectors a deadly disease for vines.\nIn France, all winegrowers need to declare their vines to the\n“viticulture Customs service”. As a result, their vines are listed in\ntheir CVI (Casier Vivitole Informatisé) and they can edit a pdf\ndocument listing all their parcels.\nThis document has a very precise format that allows the creation of a\nscript to parse it. The document has land registry information, so I\nused it to link it to files containing land registry geographic\ninformation. The link with all the data for France can be found here :\nhttps://cadastre.data.gouv.fr/datasets/cadastre-etalab.\nPrior to using this script, information was collected from pdf files\nor paper documents by hand, copied to an excel sheet to have the\nattributes of the vine parcels. Then, using the land registry\ninformation, parcels were drawn by hang using an online web service : https://www.geoportail.gouv.fr/.\nIn 2021, I had close to 1000 vines to monitor (we grouped them, so it\nwas way less in the field, but it was about 1000 records to introduce\nmanually in an excel sheet.. yupi!).\nThanks to the script, the pdf files and the land registry information\nfiles allowed me to create CSV files with all the attributes and also\nassociate geographic information for further processing with QGIS. In\nabout 1 minute.\nHow it works\nTo work, CVI files need to be placed in the cvi file. Land registry\njson files need to be placed in the CADASTRE file.\nLand registry json files are downloaded from the public service page\nlisted above. They should match the town or the department where vines\nare located. We can assume that anyone using this script knows that\ninformation.\nThe script reads the pdf file and generates a csv file using the tabula-py python\nlibrary.\nThen it parses all the lines and stores all the required information\nin lists or as string (depending on the information type).\nIt then parses the geojson files. If land registry information\nmatches one from the list, a record is written in the\noutput.csv file, with geographic information and the needed\nrecords from the pdf file.\nAt the end of the iteration, all remaining entries still stored in\nthe list (if any) are written in the output_fail.csv\nfile.\nGet the script\nThe script can be found on my github repository : https://github.com/enarroied/cvi_geometry.\nThe test CVI file is a mock-up since real files contain sensitive\ninformation.\nparcels drawn with the script viewed on\nQGis\n\n\n",
+    "preview": "projects/cvi_geometry/cvi_geometry.png",
+    "last_modified": "2022-05-11T23:43:27+02:00",
+    "input_file": {},
+    "preview_width": 1016,
+    "preview_height": 472
+  }
+]

@@ -3,6 +3,7 @@ title: "Eric Narro's blog"
 description: |
   Eric Narro's blog on data anlysis and programming
 output_dir: "docs"
+repository_url: https://github.com/enarroied/enarroied.github.io
 navbar:
   right:
     - text: "Home"
@@ -13,19 +14,27 @@ navbar:
       href: ../resume-eric-narro.pdf
     - text: "Blog"
       href: blog.html
+    - text: "Projects"
+      href: projects.html
     - icon: fa fa-github
       href: https://www.github.com/enarroied
     - icon: fa fa-twitter-square
       href: https://www.twitter.com/enarrodata
     - icon: fa fa-linkedin-square
       href: https://www.linkedin.com/in/ericnarro/?locale=en_US
+    - icon: fa fa-rss
+      href: blog.xml
 output: 
   distill::distill_article
 theme: postcards.css
 highlight: monochrome
-
+google_analytics: "G-F45SQEXDXR"
 base_url: https://enarroied.github.io
 collections:
   posts:
     disqus: eric-narro
-    share: [twitter, linkedin]
+    share: [twitter, linkedin, facebook, pinterest]
+  projects:
+    disqus: eric-narro
+    share: [twitter, linkedin, facebook, pinterest]
+  

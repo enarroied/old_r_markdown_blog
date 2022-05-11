@@ -1,9 +1,15 @@
 ---
 title: "About this blog"
 description: |
-  Some additional details about the blog
+  Some additional details about me
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+I started learning programming because I was interested in automating some tasks at work. I really found it fun since I love messing with data and turning it around to make it “speak” (I was already a huge fan of excel pivot tables). The more I learn about data science the more I like it.
+
+I am a problem solver, looking for an opportunity to demonstrate my skills with a team of highly motivated and talented professionals, with a start up spirit, and help contribute to the development of technology.
+
+You can find more about how I created this portfolio in [the blog post I created about it](posts/welcome/index.html).
